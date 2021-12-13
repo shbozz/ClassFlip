@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" name="ClassFlip">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClassFlip</output-path>
+    <root id="root">
+      <element id="archive" name="ClassFlip.jar">
+        <element id="module-output" name="ClassFlip" />
+      </element>
+    </root>
+  </artifact>
+</component>
