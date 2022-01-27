@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Welcome {
 
     private JButton startButton;
-    private JTextArea welcomeToClassFlipTextArea;
+    private JTextArea welcomeToClassFlipVerTextArea;
     private JPanel panel1;
 
     public Welcome() {
