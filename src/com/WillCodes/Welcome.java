@@ -2,7 +2,6 @@ package com.WillCodes;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
@@ -21,7 +20,7 @@ public class Welcome {
             frame1.setTitle("Select seating chart to flip");
             frame1.setVisible(true);
             try {
-                frame1.setIconImage(ImageIO.read(new File("src/Icon.png")));
+                frame1.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -41,7 +40,7 @@ public class Welcome {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
             try {
-                frame.setIconImage(ImageIO.read(new File("src/Icon.png")));
+                frame.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

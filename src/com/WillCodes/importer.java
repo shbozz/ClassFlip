@@ -2,7 +2,6 @@ package com.WillCodes;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 
 public class importer {
@@ -11,7 +10,7 @@ public class importer {
         var superView = new SuperView();
         frame.setContentPane(superView.panel1);
         try {
-            frame.setIconImage(ImageIO.read(new File("src/Icon.png")));
+            frame.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

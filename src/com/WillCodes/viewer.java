@@ -2,7 +2,6 @@ package com.WillCodes;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 
 public class viewer {
@@ -15,7 +14,7 @@ public class viewer {
         frame.setVisible(true);
         vPnl.textArea1.setText(textToView);
         try {
-            frame.setIconImage(ImageIO.read(new File("src/Icon.png")));
+            frame.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

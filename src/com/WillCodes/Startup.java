@@ -26,7 +26,7 @@ public class Startup {
             frame1.setVisible(true);
             frame1.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             try {
-                frame1.setIconImage(ImageIO.read(new File("src/Icon.png")));
+                frame1.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -37,7 +37,7 @@ public class Startup {
             frame2.setVisible(true);
             frame2.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             try {
-                frame2.setIconImage(ImageIO.read(new File("src/Icon.png")));
+                frame2.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
