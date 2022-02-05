@@ -67,10 +67,10 @@ public class Startup {
                 ioException.printStackTrace();
                 System.out.println("Nooo!");
             }
-            String splits = spliting.toString();
-            String[] splited = splits.split(", ");
-            var importing = new importer();
-            importing.importIt(splited);
+            String splits = spliting[1] + spliting[2] + spliting[3] + spliting[4];
+            String[] splited = splits.split(",");
+            var viewer = new SuperView();
+            viewer.importer(splited);
         });
     }
 }

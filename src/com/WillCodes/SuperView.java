@@ -1,11 +1,14 @@
 package com.WillCodes;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.io.IOException;
 
 public class SuperView {
 
     private JButton flipButton;
     public JPanel panel1;
+    private JFrame frame = new JFrame("File that you opened");
     String dirPart = System.getProperty("user.home");
     String dir = dirPart + "\\WCGFiles\\ClassFlip";
     private Boolean isSaved = false;
@@ -77,25 +80,36 @@ public class SuperView {
         });
     }
     public void importer(String[] studentNames){
-        studentName1TextArea.setText(studentNames[1]);
-        studentName5TextArea.setText(studentNames[2]);
-        studentName9TextArea.setText(studentNames[3]);
-        studentName13TextArea.setText(studentNames[4]);
-        teacherSDeskTextArea.setText(studentNames[5]);
-        studentName2TextArea.setText(studentNames[6]);
-        studentName6TextArea.setText(studentNames[7]);
-        studentName10TextArea.setText(studentNames[8]);
-        studentName14TextArea.setText(studentNames[9]);
-        studentName17TextArea.setText(studentNames[10]);
-        studentName3TextArea.setText(studentNames[11]);
-        studentName7TextArea.setText(studentNames[12]);
-        studentName11TextArea.setText(studentNames[13]);
-        studentName15TextArea.setText(studentNames[14]);
-        studentName18TextArea.setText(studentNames[15]);
-        studentName4TextArea.setText(studentNames[16]);
-        studentName8TextArea.setText(studentNames[17]);
-        studentName12TextArea.setText(studentNames[18]);
-        studentName16TextArea.setText(studentNames[19]);
-        studentName19TextArea.setText(studentNames[20]);
+
+        studentName1TextArea.setText(studentNames[0]);
+        studentName5TextArea.setText(studentNames[1]);
+        studentName9TextArea.setText(studentNames[2]);
+        studentName13TextArea.setText(studentNames[3]);
+        teacherSDeskTextArea.setText(studentNames[4]);
+        studentName2TextArea.setText(studentNames[5]);
+        studentName6TextArea.setText(studentNames[6]);
+        studentName10TextArea.setText(studentNames[7]);
+        studentName14TextArea.setText(studentNames[8]);
+        studentName17TextArea.setText(studentNames[9]);
+        studentName3TextArea.setText(studentNames[10]);
+        studentName7TextArea.setText(studentNames[11]);
+        studentName11TextArea.setText(studentNames[12]);
+        studentName15TextArea.setText(studentNames[13]);
+        studentName18TextArea.setText(studentNames[14]);
+        studentName4TextArea.setText(studentNames[15]);
+        studentName8TextArea.setText(studentNames[16]);
+        studentName12TextArea.setText(studentNames[17]);
+        studentName16TextArea.setText(studentNames[18]);
+        studentName19TextArea.setText(studentNames[19]);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        try {
+            frame.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        frame.setSize(1200, 500);
+        frame.setContentPane(panel1);
+        frame.setVisible(true);
     }
 }
