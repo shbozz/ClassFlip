@@ -1,43 +1,46 @@
-package com.WillCodes;
+package com.willCodes;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.FileWriter;
 
-public class GUIS {
-
+public class GUI {
     private JButton flipButton;
     public JPanel panel1;
-    private JButton saveButton;
-    private JButton closeButton;
-    private JTextField textField1;
-    String dirPart = System.getProperty("user.home");
-    String dir = dirPart + "\\WCGFiles\\ClassFlip";
     private Boolean isSaved = false;
+    String dirPart = System.getProperty("user.home");
+    String dirWin = dirPart + "\\WCGFiles\\ClassFlip\\";
+    String dirUnB = dirPart + "/WCGFiles/ClassFlip/";
+    String dir = OSDetector.isWin() ? dirWin : dirUnB;
 
-    private JTextArea studentName4TextArea;
-    private JTextArea studentName3TextArea;
-    private JTextArea studentName2TextArea;
-    private JTextArea studentName1TextArea;
-    private JTextArea studentName8TextArea;
-    private JTextArea studentName7TextArea;
-    private JTextArea studentName6TextArea;
-    private JTextArea studentName5TextArea;
-    private JTextArea studentName12TextArea;
-    private JTextArea studentName11TextArea;
-    private JTextArea studentName10TextArea;
-    private JTextArea studentName9TextArea;
-    private JTextArea studentName16TextArea;
-    private JTextArea studentName15TextArea;
-    private JTextArea studentName14TextArea;
-    private JTextArea studentName13TextArea;
-    private JTextArea teacherSDeskTextArea;
-    private JTextArea studentName19TextArea;
+    public JTextArea studentName19TextArea;
     private JTextArea studentName18TextArea;
     private JTextArea studentName17TextArea;
+    private JTextArea teacherSDeskTextArea;
+    private JTextArea studentName13TextArea;
+    private JTextArea studentName14TextArea;
+    private JTextArea studentName15TextArea;
+    private JTextArea studentName16TextArea;
+    private JTextArea studentName9TextArea;
+    private JTextArea studentName10TextArea;
+    private JTextArea studentName11TextArea;
+    private JTextArea studentName12TextArea;
 
-    public GUIS() {
+    private JButton closeButton;
+    private JButton saveButton;
+    private JTextField textField1;
+    private JTextArea studentName5TextArea;
+    private JTextArea studentName6TextArea;
+    private JTextArea studentName7TextArea;
+    private JTextArea studentName8TextArea;
+    private JTextArea studentName1TextArea;
+    private JTextArea studentName2TextArea;
+    private JTextArea studentName3TextArea;
+    private JTextArea studentName4TextArea;
+
+    public GUI(){
         flipButton.addActionListener(e -> {
+            String[][] datas = {{studentName1TextArea.getText(), studentName5TextArea.getText(), studentName9TextArea.getText(), studentName13TextArea.getText(), teacherSDeskTextArea.getText()}, {studentName2TextArea.getText(), studentName6TextArea.getText(), studentName10TextArea.getText(), studentName14TextArea.getText(), studentName17TextArea.getText()}, {studentName3TextArea.getText(), studentName7TextArea.getText(), studentName11TextArea.getText(), studentName15TextArea.getText(), studentName18TextArea.getText()}, {studentName4TextArea.getText(), studentName8TextArea.getText(), studentName12TextArea.getText(), studentName16TextArea.getText(), studentName19TextArea.getText()}};
             String studentName1 = studentName1TextArea.getText();
             String studentName2 = studentName2TextArea.getText();
             String studentName3 = studentName3TextArea.getText();
@@ -83,25 +86,19 @@ public class GUIS {
         saveButton.addActionListener(e -> {
             isSaved = true;
             String name = textField1.getText();
-            String data = studentName4TextArea.getText()+", "+studentName8TextArea.getText()+", "+studentName12TextArea.getText()+", "+studentName16TextArea.getText()+", "+studentName19TextArea.getText()+"\n"+studentName3TextArea.getText()+", "+studentName7TextArea.getText()+", "+studentName11TextArea.getText()+", "+studentName15TextArea.getText()+", "+studentName18TextArea.getText()+"\n"+studentName2TextArea.getText()+", "+studentName6TextArea.getText()+", "+studentName10TextArea.getText()+", "+studentName14TextArea.getText()+", "+studentName17TextArea.getText()+"\n"+studentName1TextArea.getText()+", "+studentName5TextArea.getText()+", "+studentName9TextArea.getText()+", "+studentName13TextArea.getText()+", "+teacherSDeskTextArea.getText();
+            String data = studentName1TextArea.getText()+", "+studentName5TextArea.getText()+", "+studentName9TextArea.getText()+", "+studentName13TextArea.getText()+", "+teacherSDeskTextArea.getText()+",\n"+studentName2TextArea.getText()+", "+studentName6TextArea.getText()+", "+studentName10TextArea.getText()+", "+studentName14TextArea.getText()+", "+studentName17TextArea.getText()+",\n"+studentName3TextArea.getText()+", "+studentName7TextArea.getText()+", "+studentName11TextArea.getText()+", "+studentName15TextArea.getText()+", "+studentName18TextArea.getText()+",\n"+studentName4TextArea.getText()+", "+studentName8TextArea.getText()+", "+studentName12TextArea.getText()+", "+studentName16TextArea.getText()+", "+studentName19TextArea.getText();
 
             new File(dir).mkdirs();
-            System.out.println(dir + "\\" + name + ".txt");
+
             try {
-                // Creates a FileWriter
-                FileWriter output = new FileWriter(dir + "\\" + name + ".txt");
-
-                // Writes the string to the file
+                FileWriter output = new FileWriter(dir + name + ".txt");
                 output.write(data);
-
-                // Closes the writer
                 output.close();
+                System.out.println(dir + name + ".txt");
             }
             catch (Exception f) {
                 f.getStackTrace();
             }
-            var superView = new viewer();
-            superView.prepare("Your saved flip: "+name,data);
         });
         closeButton.addActionListener(e -> {
             if (isSaved==false){

@@ -1,16 +1,12 @@
-package com.WillCodes;
+package com.willCodes;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.IOException;
 
 public class SuperView {
 
     private JButton flipButton;
     public JPanel panel1;
     private JFrame frame = new JFrame("File that you opened");
-    String dirPart = System.getProperty("user.home");
-    String dir = dirPart + "\\WCGFiles\\ClassFlip";
     private Boolean isSaved = false;
 
     private JTextArea studentName4TextArea;
@@ -102,14 +98,6 @@ public class SuperView {
         studentName16TextArea.setText(studentNames[18]);
         studentName19TextArea.setText(studentNames[19]);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        try {
-            frame.setIconImage(ImageIO.read(Welcome.class.getResource("Icon.png")));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        frame.setSize(1200, 500);
-        frame.setContentPane(panel1);
-        frame.setVisible(true);
+        Misc.makeFrame(frame,1200,500,panel1);
     }
 }
