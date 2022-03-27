@@ -24,7 +24,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <text value="Welcome to ClassFlip™ ver. 1.1 (Full Files!)"/>
+          <text value="Welcome to ClassFlip™ ver. 1.2 (Clean Code!)"/>
         </properties>
       </component>
     </children>
