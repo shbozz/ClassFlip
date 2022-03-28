@@ -1,5 +1,5 @@
 # ClassFlip
-A useful app for fliping seating charts
+A good (enough) app for fliping seating charts
 
 ## 🛠 Constrution Zone 🛠
 
