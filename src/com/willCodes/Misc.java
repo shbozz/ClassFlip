@@ -12,7 +12,7 @@ public class Misc {
         frame.setSize(width, height);
         frame.setContentPane(panel);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try {
             frame.setIconImage(ImageIO.read(Objects.requireNonNull(Welcome.class.getResource("Icon.png"))));
         } catch (IOException ex) {
