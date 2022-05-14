@@ -22,3 +22,8 @@ public class  Welcome {
         Misc.makeFrame(frame,500,300,new Welcome().panel1);
     }
 }
+
+/*
+manage seating charts in ClassFlip
+Copyright (C) 2021-2022  Shbozz development
+*/

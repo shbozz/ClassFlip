@@ -29,3 +29,8 @@ public class Startup {
         createNewButton.addActionListener(e -> JOptionPane.showMessageDialog(frame1,"Feature not avalible.","Error",JOptionPane.ERROR_MESSAGE));
     }
 }
+
+/*
+manage seating charts in ClassFlip
+Copyright (C) 2021-2022  Shbozz development
+*/

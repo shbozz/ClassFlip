@@ -101,3 +101,8 @@ public class SuperView {
         Misc.makeFrame(frame,1200,500,panel1);
     }
 }
+
+/*
+manage seating charts in ClassFlip
+Copyright (C) 2021-2022  Shbozz development
+*/
